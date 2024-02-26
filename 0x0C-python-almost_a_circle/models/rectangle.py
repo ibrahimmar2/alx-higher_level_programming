@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 '''
     Class Rectangle
 '''
@@ -124,7 +125,7 @@ class Rectangle(Base):
 
     @staticmethod
     def setter_validation(attribute, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(attribute))
         if attribute == "x" or attribute == "y":
             if value < 0:
