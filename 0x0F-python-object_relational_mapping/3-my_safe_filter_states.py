@@ -25,11 +25,9 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    sql = """SELECT * FROM states
-        WHERE name LIKE BINARY = %s
-        ORDER BY id ASC"""
-
-    cursor.execute(sql, (sys.argv[4],))
+    cursor.execute("SELECT * FROM states \
+                    WHERE name LIKE BINARY = %s\
+                    ORDER BY id ASC".format(sys.argv[4],))
 
     results = cursor.fetchall()
 
